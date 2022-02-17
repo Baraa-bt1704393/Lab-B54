@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*border: 1px red solid;*/
+    /*margin: 10px;*/
+}
+html {
+    height: 100%;
+}
+body {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    line-height: 30%;
+    font-family: "Urdu Typesetting", Aldhabi;
+}
+.container {
+    height: 100%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-rows: 0.15fr auto 0.4fr 0.2fr;
+    grid-template-areas:
+    "header"
+    "form"
+    "section"
+    "footer";
+}
+header{
+    padding: 1rem;
+    display: grid;
+    place-items: start;
+    grid-area: header;
+}
+h1{
+
+    font-family: 'Roboto Mono', monospace;
+}
+form {
+    display: grid;
+    padding: 0.5rem;
+    /*max-width: 500px;*/
+    place-items: start;
+    align-items: start;
+    grid-area: form;
+}
+form input {
+    width: 440px;
+    height: 30px;
+}
+form button {
+    border: black;
+    border-radius: 16%;
+    padding: 1em;
+    background: grey;
+    color: #ffffff;
+    width: 70px;
+}
+label {
+    padding: 0.5rem ;
+}
+section{
+    padding: 1rem;
+    line-height: normal;
+    display: grid;
+    place-items: start;
+    align-items: start;
+    /*  display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      /*  display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+*/
+      grid-area: section;
+  }
+section img{
+    border-radius: 20%;
+}
+footer{
+    display: grid;
+    place-items: center;
+    line-height: 100px;
+    align-items: center;
+    /*  display: flex;
+    line-height: 100px;
+    justify-content: center;
+    align-items: center;
+    */
+    grid-area: footer;
+
+}
+@media screen and (min-width: 60rem){
+    .container {
+        height: 100%;
+        background-color: #dee1e3;
+        display: grid;
+        grid-template-rows: 0.5fr 0.9fr auto 0.5fr 0.2fr;
+        grid-template-columns: 0.4fr 0.5fr;
+        grid-template-areas:
+    "section header"
+    "section form"
+    "footer form";
+    }
+    form{
+        padding: 0rem;
+        display: grid;
+        place-items: baseline;
+        align-items: baseline;
+    }
+    form input {
+    width: 100px;
+    height: 30px;
+    }
+    footer{
+        line-height: initial;
+        place-items: start;
+    }
+}

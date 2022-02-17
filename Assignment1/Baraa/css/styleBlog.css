@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*border: 1px red solid;*/
+    /*margin: 10px;*/
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    line-height:30px;
+}
+.container {
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 0.2fr 0.3fr auto 0.2fr;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "footer";
+}
+header{
+    padding: 1rem;
+    margin: 10px;
+    display: grid;
+    place-items: start;
+    grid-area: header;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+
+}
+/*.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}*/
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-area: main;
+}
+.card{
+    padding: 1rem;
+    width:100%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+.card img {
+    width: 60%;
+    height: 18%;
+    border-radius: 12%;
+}
+h3{
+    font-family: 'Roboto Mono', monospace;
+}
+span img{
+    display: grid;
+    place-items: end;
+}
+nav{
+    padding: 1rem;
+    display: grid;
+    place-items: end;
+    align-content: end;
+    grid-area: nav;
+    transition: 0.5s;
+}
+nav ul
+{
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav ul li {
+    list-style: none;
+    /*padding: 5px;
+    text-align: left;*/
+}
+nav a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+ul li a:hover {
+    color: dodgerblue;
+    background-color: #cdd0d3;
+}
+a:visited{
+    color: blueviolet;
+}
+footer{
+    display: flex;
+    line-height: 30px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: footer;
+}
+footer p{
+    line-height: 140px;
+}
+@media screen and (min-width: 60rem){
+    .container{
+       /* height: 100%;
+        width: 100%;
+        display: grid;
+        */gap: 2rem;
+        grid-template-rows: 0.3fr auto 0.2fr;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+        "header nav"
+        "main main"
+        "footer footer";
+    }
+}

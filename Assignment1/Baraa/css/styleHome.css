@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ /*   border: 1px red solid;
+    margin: 10px;
+*/}
+html {
+    height: 100%;
+}
+body {
+     height: 100%;
+     width: 100%;
+     margin: auto;
+     line-height:30px;
+ }
+.container {
+    margin: auto;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.2fr 0.15fr 0.25fr auto 0.2fr;
+    grid-template-areas:
+            "nav"
+            "header"
+    "FCard"
+    "card"
+    "LCard"
+    "footer";
+}
+header{
+    padding: 1rem;
+    margin: 20px;
+    display: grid;
+    place-items: center;
+    grid-area: header;
+}
+header img{
+    border-radius: 50%;
+}
+.FCard{
+    padding: 0.5rem;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: FCard;
+}
+.cards span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+li{
+    list-style: none;
+}
+.btn {
+    background-color: #689ed3;
+    color: white;
+    padding: 1rem;
+    font-size: medium;
+    border-radius: 15px;
+    border: none;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.cards {
+    background-color: #c3d5e7;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+.card{
+    background-color: white;
+    width: 75%;
+    height: auto;
+    margin: 70px;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: card;
+}
+.LCard{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    line-height: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: LCard;
+}
+.LCard img{
+    width: 250px;
+    height: 150px;
+}
+.LCard h3{
+    padding: 0.5rem;
+    line-height: 1.7rem;
+}
+h3{
+    font-family: 'Roboto Mono', monospace;
+}
+nav{
+    padding: 1rem;
+    display: grid;
+    place-items: end;
+    align-content: end;
+    grid-area: nav;
+    transition: 0.5s;
+}
+nav ul
+{
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav ul li {
+    list-style: none;
+
+}
+nav a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+ul li a:hover {
+    color: dodgerblue;
+    background-color: #cdd0d3;
+}
+a:visited{
+   color: blueviolet;
+}
+footer{
+    display: flex;
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   grid-area: footer;
+
+}
+.fa-stack * i{
+    margin-right: 1em;
+}
+footer p{
+    line-height: 140px;
+}
+@media screen and (min-width: 60rem){
+    .container {
+        margin: auto;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 0.2fr 0.5fr  repeat(2,auto) 0.2fr;
+        grid-template-columns: repeat(2,auto);
+        grid-template-areas:
+        "nav nav "
+     "FCard header"
+    "card card"
+    "LCard LCard"
+    "footer footer";
+    }
+    .LCard {
+        display: flex;
+
+        align-items: center;
+        flex-direction: column;
+        }
+    .LCard p, h3 {
+        text-align: center;
+        flex-direction: row;
+    }
+
+
+}
